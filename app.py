@@ -1,5 +1,10 @@
 import gradio, requests, json
 import os
+import redis
+
+redis_client = redis.StrictRedis(host='localhost', port=6379, db=0)
+redis_client.rpush('prompts', prompt)
+redis_client.rpush('responses', resp)
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 
