@@ -5,3 +5,12 @@ services:
      ports:
       - "6379:6379"
 
+  app:
+     build: .
+     image: mybot
+     ports:
+      - "7860:7860"
+     environment:
+      - OPENROUTER_API_KEY=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
+      - REDIS_HOST=redis-server
+      - REDIS_PORT=6379
