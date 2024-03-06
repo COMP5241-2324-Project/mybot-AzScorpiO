@@ -1,6 +1,8 @@
 import gradio, requests, json
+import os
 
-OPENROUTER_API_KEY = None 
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+
 if OPENROUTER_API_KEY is None:
     print("Please set the OPENROUTER_API_KEY")
     exit(1)
