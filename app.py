@@ -8,6 +8,12 @@ if OPENROUTER_API_KEY is None:
     exit(1)
 
 def chat(prompt): 
+
+    # Check if the user wants to know who is the author
+    if "author" in prompt.lower():
+        return "My author's name is [AzScorpiO-Zhuofan Zhao]."
+    
+    # Otherwise
     msg = [
         {"role": "system", "content": "Answer questions related to Software Engineering in funny tone with Emoji"},
         {"role": "user", "content": prompt}
